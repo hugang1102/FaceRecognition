@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScO-Fu-567">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Demo-->
+        <scene sceneID="nDu-d5-vkI">
+            <objects>
+                <tableViewController id="9ID-Ep-wAc" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jIU-E3-twd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="lP2-HF-3Ql" style="IBUITableViewCellStyleDefault" id="DVq-bg-WLg">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DVq-bg-WLg" id="DtE-7q-gGY">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lP2-HF-3Ql">
+                                            <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9ID-Ep-wAc" id="b9z-Ef-Ti7"/>
+                            <outlet property="delegate" destination="9ID-Ep-wAc" id="51n-R1-XbY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Demo" id="leq-qw-2tu"/>
+                    <connections>
+                        <segue destination="hru-ig-7dg" kind="show" identifier="gotoFaceDetectionViewController" id="9jC-N2-SGQ"/>
+                        <segue destination="hbK-xh-Wpq" kind="show" identifier="gotoFeatureExtractViewController" id="HoR-pa-R2A"/>
+                        <segue destination="iUe-hx-muz" kind="show" identifier="gotoPhotoCompareViewController" id="u7p-L9-zse"/>
+                        <segue destination="rdV-F1-4IJ" kind="show" identifier="gotoDynamicRecognitionViewController" id="m3Q-Kc-mie"/>
+                        <segue destination="lXh-I2-IFn" kind="show" identifier="gotoFeatureSimilarityViewController" id="ld0-0e-eJT"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHS-Tc-b0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988.40579710144937" y="-63.616071428571423"/>
+        </scene>
+        <!--特征比对-->
+        <scene sceneID="paG-gE-ugV">
+            <objects>
+                <tableViewController storyboardIdentifier="LocalFeaturesTableViewController" id="PG3-bj-fJD" customClass="LocalFeaturesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HmK-kP-Nke">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="localFeatureCell" id="YSc-sh-FhU">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YSc-sh-FhU" id="ULK-kg-pXu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PG3-bj-fJD" id="GVd-EE-p0x"/>
+                            <outlet property="delegate" destination="PG3-bj-fJD" id="Kfo-qG-qhs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="特征比对" id="7Vv-1D-FEU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rT-6o-VoV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="-832"/>
+        </scene>
+        <!--人脸检测-->
+        <scene sceneID="cxK-8F-mSL">
+            <objects>
+                <viewController id="hru-ig-7dg" customClass="FaceDetectionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qKi-gN-KyM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xfd-95-9Hp">
+                                <rect key="frame" x="87" y="333" width="240" height="230"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFw-HX-G3z">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="180"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FFw-HX-G3z" secondAttribute="height" multiplier="4:3" id="QVq-Rd-CrU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZx-q7-0c5">
+                                        <rect key="frame" x="0.0" y="200" width="240" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="开始">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonClick:" destination="hru-ig-7dg" eventType="touchUpInside" id="MA6-7i-zqe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jZx-q7-0c5" firstAttribute="width" secondItem="xfd-95-9Hp" secondAttribute="width" id="50x-t5-NbS"/>
+                                    <constraint firstItem="FFw-HX-G3z" firstAttribute="width" secondItem="xfd-95-9Hp" secondAttribute="width" id="j7b-0G-lhs"/>
+                                    <constraint firstAttribute="width" constant="240" id="ugj-lg-NCo"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xfd-95-9Hp" firstAttribute="centerX" secondItem="qKi-gN-KyM" secondAttribute="centerX" id="ILn-1W-URb"/>
+                            <constraint firstItem="xfd-95-9Hp" firstAttribute="centerY" secondItem="qKi-gN-KyM" secondAttribute="centerY" id="YVg-Mt-eC9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c4K-e5-ruj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="人脸检测" id="NnP-tE-Rfj"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="FFw-HX-G3z" id="guH-9W-rkF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLW-oe-SDV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-863"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JqF-6X-kbo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ScO-Fu-567" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7gH-Pb-vqW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9ID-Ep-wAc" kind="relationship" relationship="rootViewController" id="Lhh-an-zew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4a-FW-c8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.260869565217391" y="-63.616071428571423"/>
+        </scene>
+        <!--特征提取-->
+        <scene sceneID="Go7-Z2-XZh">
+            <objects>
+                <viewController id="hbK-xh-Wpq" customClass="FeatureExtractViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QvT-J8-G8J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vjY-iJ-xqF">
+                                <rect key="frame" x="87" y="333" width="240" height="230"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EuC-tc-w08">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="180"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="EuC-tc-w08" secondAttribute="height" multiplier="4:3" id="hrW-5c-oNS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-jp-6Ju">
+                                        <rect key="frame" x="0.0" y="200" width="240" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="开始">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonClick:" destination="hbK-xh-Wpq" eventType="touchUpInside" id="TSN-71-aFX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EuC-tc-w08" firstAttribute="width" secondItem="vjY-iJ-xqF" secondAttribute="width" id="2vK-n9-PZe"/>
+                                    <constraint firstAttribute="width" constant="240" id="5KB-b4-M22"/>
+                                    <constraint firstItem="XaO-jp-6Ju" firstAttribute="width" secondItem="vjY-iJ-xqF" secondAttribute="width" id="fzO-VC-BHr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vjY-iJ-xqF" firstAttribute="centerX" secondItem="QvT-J8-G8J" secondAttribute="centerX" id="2Ks-OR-Ubu"/>
+                            <constraint firstItem="vjY-iJ-xqF" firstAttribute="centerY" secondItem="QvT-J8-G8J" secondAttribute="centerY" id="kZZ-wJ-IfW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KQo-Lc-kmk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="特征提取" id="XjT-IF-W9d">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="UCY-R2-Dli">
+                            <connections>
+                                <action selector="saveItemClick:" destination="hbK-xh-Wpq" id="jP3-mC-pKh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="EuC-tc-w08" id="aFw-EL-rin"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKg-h2-hIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733" y="-832"/>
+        </scene>
+        <!--对比图片-->
+        <scene sceneID="P69-Th-MCc">
+            <objects>
+                <viewController id="iUe-hx-muz" customClass="PhotoCompareViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIF-b5-L0E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="35P-4K-kcM">
+                                <rect key="frame" x="87" y="118" width="240" height="420"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-4A-4D1" userLabel="top">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="180"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cY3-4A-4D1" secondAttribute="height" multiplier="4:3" id="hii-Zd-VoR"/>
+                                        </constraints>
+                                        <state key="normal" title="添加"/>
+                                        <connections>
+                                            <action selector="topButtonClick:" destination="iUe-hx-muz" eventType="touchUpInside" id="xOo-OJ-Ol3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79O-At-FgD" userLabel="bottom">
+                                        <rect key="frame" x="0.0" y="195" width="240" height="180"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="79O-At-FgD" secondAttribute="height" multiplier="4:3" id="iyt-wB-ykQ"/>
+                                        </constraints>
+                                        <state key="normal" title="添加"/>
+                                        <connections>
+                                            <action selector="bottomButtonClick:" destination="iUe-hx-muz" eventType="touchUpInside" id="m2z-uc-pd0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-R2-fsG">
+                                        <rect key="frame" x="0.0" y="390" width="240" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="开始">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonClick:" destination="iUe-hx-muz" eventType="touchUpInside" id="1T7-Xd-kjx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ydh-R2-fsG" firstAttribute="width" secondItem="35P-4K-kcM" secondAttribute="width" id="IvJ-YZ-7Nf"/>
+                                    <constraint firstAttribute="width" constant="240" id="Q61-bI-4lP"/>
+                                    <constraint firstItem="cY3-4A-4D1" firstAttribute="width" secondItem="35P-4K-kcM" secondAttribute="width" id="rzp-qg-FbN"/>
+                                    <constraint firstItem="79O-At-FgD" firstAttribute="width" secondItem="35P-4K-kcM" secondAttribute="width" id="xK9-mc-COY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="35P-4K-kcM" firstAttribute="top" secondItem="CD7-wZ-WFe" secondAttribute="top" constant="30" id="9rs-7j-lHf"/>
+                            <constraint firstItem="35P-4K-kcM" firstAttribute="centerX" secondItem="CD7-wZ-WFe" secondAttribute="centerX" id="ZS4-pT-66x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CD7-wZ-WFe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="对比图片" id="q4J-7L-T25"/>
+                    <connections>
+                        <outlet property="bottomButton" destination="79O-At-FgD" id="Cbf-8O-ZCb"/>
+                        <outlet property="topButton" destination="cY3-4A-4D1" id="4cZ-wj-k2s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ama-j5-XCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3457" y="29"/>
+        </scene>
+        <!--动态识别-->
+        <scene sceneID="FnA-m1-G6j">
+            <objects>
+                <viewController id="rdV-F1-4IJ" customClass="DynamicRecognitionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r6f-3W-LUM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="eSs-96-Dca">
+                                <rect key="frame" x="87" y="380.5" width="240" height="135"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogl-2t-IjN">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Igb-2K-d1T"/>
+                                        </constraints>
+                                        <state key="normal" title="录 入">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordButtonClick:" destination="rdV-F1-4IJ" eventType="touchUpInside" id="ieH-eH-6x2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBm-4q-4TH">
+                                        <rect key="frame" x="0.0" y="85" width="240" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="识 别">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recognitionButtonClick:" destination="rdV-F1-4IJ" eventType="touchUpInside" id="RGj-uV-uei"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BBm-4q-4TH" firstAttribute="height" secondItem="Ogl-2t-IjN" secondAttribute="height" id="7AL-Ba-lMI"/>
+                                    <constraint firstAttribute="width" constant="240" id="7CO-cY-AJd"/>
+                                    <constraint firstItem="BBm-4q-4TH" firstAttribute="width" secondItem="eSs-96-Dca" secondAttribute="width" id="fMe-fN-3ex"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eSs-96-Dca" firstAttribute="centerY" secondItem="r6f-3W-LUM" secondAttribute="centerY" id="4RM-SG-EzX"/>
+                            <constraint firstItem="eSs-96-Dca" firstAttribute="centerX" secondItem="r6f-3W-LUM" secondAttribute="centerX" id="wDG-ak-apx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FSU-TL-dKi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="动态识别" id="iAp-XY-vrZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="34x-mQ-Ckr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2786" y="485"/>
+        </scene>
+        <!--特征对比-->
+        <scene sceneID="KSJ-VX-FEW">
+            <objects>
+                <viewController id="lXh-I2-IFn" customClass="FeatureSimilarityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sfo-ub-3NK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x53-gR-NW2">
+                                <rect key="frame" x="87" y="379" width="240" height="138"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wG-eE-spX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="第一项"/>
+                                        <connections>
+                                            <action selector="firstItemClick:" destination="lXh-I2-IFn" eventType="touchUpInside" id="yu8-x7-Aws"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjA-sB-ozU">
+                                        <rect key="frame" x="0.0" y="54" width="240" height="34"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="第二项"/>
+                                        <connections>
+                                            <action selector="secondItemClick:" destination="lXh-I2-IFn" eventType="touchUpInside" id="wrm-jp-Xr4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiO-s5-ury">
+                                        <rect key="frame" x="0.0" y="108" width="240" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="开始">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonClick:" destination="lXh-I2-IFn" eventType="touchUpInside" id="Na2-xU-Tyr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yiO-s5-ury" firstAttribute="width" secondItem="x53-gR-NW2" secondAttribute="width" id="73h-hL-Xbe"/>
+                                    <constraint firstAttribute="width" constant="240" id="eUB-cv-xxm"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="x53-gR-NW2" firstAttribute="centerX" secondItem="Sfo-ub-3NK" secondAttribute="centerX" id="1yi-dm-Kly"/>
+                            <constraint firstItem="x53-gR-NW2" firstAttribute="centerY" secondItem="Sfo-ub-3NK" secondAttribute="centerY" id="IBm-Vc-JCX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qP6-4f-XG4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="特征对比" id="9yM-2F-MoW"/>
+                    <connections>
+                        <outlet property="firstItem" destination="4wG-eE-spX" id="wc0-Ri-15S"/>
+                        <outlet property="secondItem" destination="FjA-sB-ozU" id="0Qq-mq-tqr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2h-n1-Arc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3697" y="-625"/>
+        </scene>
+    </scenes>
+</document>
